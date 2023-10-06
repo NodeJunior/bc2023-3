@@ -14,7 +14,7 @@ function filterAndWriteData(data, outputFilePath) {
     });
 }
 
-fs.readFile("data.json", (err, data) => {
+fs.readFile("data.json", "utf-8", (err, data) => {
     if (err === null) {
         const json = JSON.parse(data);
         filterAndWriteData(json, outputTxtFile);
