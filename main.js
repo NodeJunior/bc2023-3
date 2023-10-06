@@ -1,6 +1,5 @@
 const fs = require("node:fs");
 
-const inputJsonFile = 'data.json';
 const outputTxtFile = 'output.txt';
 
 function filterAndWriteData(data, outputFilePath) {
