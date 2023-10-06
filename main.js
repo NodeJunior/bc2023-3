@@ -5,7 +5,13 @@ const outputTxtFile = 'output.txt';
 function filterAndWriteData(data, outputFilePath) {
     const filteredData = data.filter(item => item.ku === '13' && item.value > 5);
     const formattedData = filteredData.map(item => JSON.stringify(item, null, 2) + '\n');
-    fs.writeFileSync(outputFilePath, formattedData.join(''));
+    fs.writeFile(outputFilePath, formattedData.join(''), (err) => {
+        if (err === null) {
+            console.log('Success.');
+        } else {
+            console.log(err);
+        }
+    });
 }
 
 fs.readFile("data.json", (err, data) => {
