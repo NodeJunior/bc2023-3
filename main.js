@@ -4,7 +4,7 @@ const outputTxtFile = 'output.txt';
 
 function filterAndWriteData(data, outputFilePath) {
     const filteredData = data.filter(item => item.ku === '13' && item.value > 5);
-    const formattedData = filteredData.map(item => JSON.stringify(item, null, 2) + '\n');
+    const formattedData = filteredData.map(item => item.value + '\n');
     fs.writeFile(outputFilePath, formattedData.join(''), (err) => {
         if (err === null) {
             console.log('Success.');
